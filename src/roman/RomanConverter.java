@@ -1,16 +1,20 @@
 package roman;
 
+import java.util.Hashtable;
+
 public class RomanConverter {
+
+	private Hashtable<Character, Integer> symbols = new Hashtable<Character, Integer>(){{
+		put('I', 1);
+		put('V', 5);
+	}};
 
 	public int convert(String roman) {
 		int sum=0;
 		for (char ch: roman.toCharArray()){
-			if(ch=='I'){
-				sum +=1;
-		}else if(ch=='V'){
-			sum += 5;
-			
-		}else {
+			if(symbols.containsKey(ch)){
+				sum += symbols.get(ch);
+			}else{		
 				throw new IllegalArgumentException("Illegal roman character " +ch);
 			}//end if
 		}//end for loop
