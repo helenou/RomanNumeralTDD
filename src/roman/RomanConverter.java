@@ -15,7 +15,7 @@ public class RomanConverter {
 		int previous;
 		
 		for (int index=0; index < roman.length(); index++){
-			if(symbols.containsKey(roman.toCharArray()[index])){
+			if(doesRomanCharacterExistInSymbols(roman, index)){
 
 				current = getIntValue(roman, index);
 				previous = (index == 0)? 0 : getIntValue(roman, index-1);
@@ -33,6 +33,10 @@ public class RomanConverter {
 		
 		return sum;
 	}//end convert()
+
+	private boolean doesRomanCharacterExistInSymbols(String roman, int index) {
+		return symbols.containsKey(roman.toCharArray()[index]);
+	}
 
 	private Integer getIntValue(String roman, int index) {
 		return symbols.get(roman.toCharArray()[index]);
