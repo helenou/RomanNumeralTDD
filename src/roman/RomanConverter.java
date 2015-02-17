@@ -17,8 +17,8 @@ public class RomanConverter {
 		for (int index=0; index < roman.length(); index++){
 			if(symbols.containsKey(roman.toCharArray()[index])){
 
-				current = symbols.get(roman.toCharArray()[index]);
-				previous = (index == 0)? 0 : symbols.get(roman.toCharArray()[index-1]);
+				current = getIntValue(roman, index);
+				previous = (index == 0)? 0 : getIntValue(roman, index-1);
 				if(previous >= current){
 					sum += current;
 				}else{
@@ -33,6 +33,10 @@ public class RomanConverter {
 		
 		return sum;
 	}//end convert()
+
+	private Integer getIntValue(String roman, int index) {
+		return symbols.get(roman.toCharArray()[index]);
+	}
 
 }//end class
 
