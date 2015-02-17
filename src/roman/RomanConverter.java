@@ -11,11 +11,23 @@ public class RomanConverter {
 
 	public int convert(String roman) {
 		int sum=0;
-		for (char ch: roman.toCharArray()){
-			if(symbols.containsKey(ch)){
-				sum += symbols.get(ch);
-			}else{		
-				throw new IllegalArgumentException("Illegal roman character " +ch);
+		int current;
+		int previous;
+		
+		for (int index=0; index < roman.length(); index++){
+			if(symbols.containsKey(roman.toCharArray()[index])){
+
+				current = symbols.get(roman.toCharArray()[index]);
+				previous = (index == 0)? 0 : symbols.get(roman.toCharArray()[index-1]);
+				if(previous >= current){
+					sum += current;
+				}else{
+					sum -= previous;
+					sum += (current - previous);
+				}
+			}
+			else{		
+				throw new IllegalArgumentException("Illegal roman character " +roman.toCharArray()[index]);
 			}//end if
 		}//end for loop
 		
