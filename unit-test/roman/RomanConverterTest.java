@@ -20,5 +20,10 @@ public class RomanConverterTest {
 	public void convertV() {
 		Assert.assertEquals(5, new RomanConverter().convert("V"));
 	}
+	
+	@Test
+	public void convertVI() {
+		Assert.assertEquals(5, new RomanConverter().convert("V"));
+	}
 
 }
