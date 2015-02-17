@@ -3,14 +3,16 @@ package roman;
 public class RomanConverter {
 
 	public int convert(String roman) {
+		int sum=0;
+		for (char ch: roman.toCharArray()){
+			if(ch=='I'){
+				sum +=1;
+			}else {
+				throw new IllegalArgumentException();
+			}//end if
+		}//end for loop
 		
-		if("I".equals(roman)){
-			return 1;	
-		} else if("II".equals(roman)){
-			return 2;
-		} else {
-			throw new IllegalArgumentException();
-		}
+		return sum;
 	}//end convert()
 
 }//end class
