@@ -8,7 +8,7 @@ public class RomanConverter {
 			if(ch=='I'){
 				sum +=1;
 			}else {
-				throw new IllegalArgumentException();
+				throw new IllegalArgumentException("Illegal roman character " +ch);
 			}//end if
 		}//end for loop
 		
