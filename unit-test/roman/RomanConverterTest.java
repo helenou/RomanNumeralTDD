@@ -16,4 +16,9 @@ public class RomanConverterTest {
 		Assert.assertEquals(2, new RomanConverter().convert("II"));
 	}	
 
+	@Test
+	public void convertV() {
+		Assert.assertEquals(5, new RomanConverter().convert("V"));
+	}
+
 }
