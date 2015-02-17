@@ -23,7 +23,7 @@ public class RomanConverterTest {
 	
 	@Test
 	public void convertVI() {
-		Assert.assertEquals(5, new RomanConverter().convert("V"));
+		Assert.assertEquals(6, new RomanConverter().convert("VI"));
 	}
 
 }
