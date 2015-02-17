@@ -30,5 +30,25 @@ public class RomanConverterTest {
 	public void convertIV() {
 		Assert.assertEquals(4, new RomanConverter().convert("IV"));
 	}
+	
+	@Test
+	public void convertVIII() {
+		Assert.assertEquals(8, new RomanConverter().convert("VIII"));
+	}
+	
+	@Test
+	public void convertX() {
+		Assert.assertEquals(10, new RomanConverter().convert("X"));
+	}
+	
+	@Test
+	public void convertIX() {
+		Assert.assertEquals(9, new RomanConverter().convert("IX"));
+	}
+	
+	@Test
+	public void convertXII() {
+		Assert.assertEquals(12, new RomanConverter().convert("XII"));
+	}
 
 }
