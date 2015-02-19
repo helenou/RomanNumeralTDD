@@ -7,6 +7,7 @@ public class RomanConverter {
 	private Hashtable<Character, Integer> symbols = new Hashtable<Character, Integer>(){{
 		put('I', 1);
 		put('V', 5);
+		put('X', 10);
 	}};
 
 	public int convert(String roman) {
